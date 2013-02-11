@@ -1,4 +1,4 @@
-# Automated::Commands
+# AutomatedCommands
 
 Still using TestUnit? Great! This gem helps automate DHHs [commands][1] gem which runs all test inside your Rails console.
 
