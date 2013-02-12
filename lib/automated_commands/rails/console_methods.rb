@@ -11,6 +11,7 @@ module AutomatedCommands
 
             path = input.gets # e.g. test/unit/some_test.rb
 
+            reload!
             if path =~ /test\/(.*)\/.*\.rb/
               # p "test '#{$1}'"
               test $1
