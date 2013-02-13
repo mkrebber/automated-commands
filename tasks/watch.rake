@@ -9,7 +9,7 @@ namespace :automated_commands do
 
     p "listening for changes in your tests"
 
-    Listen.to('test', filter: /.*_test\.rb$/, latency: 0.2) do |modified, added, removed|
+    Listen.to('test', 'app', filter: /.*\.rb$/, latency: 0.2) do |modified, added, removed|
       output = open("test_pipe", "w+")
 
       (modified || []).each do |modified_file|

@@ -7,6 +7,10 @@ module AutomatedCommands
       def start_test_listener
         original_trap = Signal.trap("SIGINT", proc { raise "exit" })
 
+        mapping = {
+          "models" => "unit",
+          "controllers" => "functional"
+        }
 
         distributed_test_result = TestResult.new(0, 0, 0, 0, 0)
         last_test_result = nil
@@ -27,6 +31,11 @@ module AutomatedCommands
                 test $1
               end
               last_test_result = distributed_test_result.dup
+
+            elsif path =~ /app\/(.*)\/(.*)\.rb/
+              tests = "#{mapping[$1]}/#{$2}"
+
+              test tests
             end
           rescue => e
             p e
