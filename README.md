@@ -20,16 +20,18 @@ Or install it yourself as:
 
 You basically need to follow two steps to get it up and running:
 
-    $ bundle exec rake automated_commands:watch &
-    $ RAILS_ENV=test bundle exec rails c
-    irb(main):001:0> start_test_listener
+``` bash
+$ RAILS_ENV=test bundle exec rails c
+```
+``` ruby
+irb(main):001:0> start_test_listener
+```
 
 That's it! Now when you are changing any files located under `test` your tests will be automatically be run.
 
 ## TODO
 
 - tests
-- display test results in :watch task output
 
 ## Contributing
 
