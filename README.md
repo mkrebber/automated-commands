@@ -12,10 +12,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install automated-commands
-
 ## Usage
 
 You basically need to follow two steps to get it up and running:
@@ -28,6 +24,10 @@ irb(main):001:0> start_test_listener
 ```
 
 That's it! Now when you are changing any files located under `test` your tests will be automatically be run.
+
+## Important
+
+It does not work properly if you have `gem "rb-fsevent"` inside your Gemfile. This problem will be solved in future versions.
 
 ## TODO
 
